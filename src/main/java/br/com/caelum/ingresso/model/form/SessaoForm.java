@@ -59,6 +59,7 @@ public class SessaoForm {
 	}
 	
 	public Sessao toSessao(SalaDao salaDao, FilmeDao filmeDao){
+		//busca o id do filme e da sala no banco 
 		Filme filme = filmeDao.findOne(filmeId);
 		Sala sala = salaDao.findOne(salaId);
 		
