@@ -16,7 +16,7 @@ public class Ingresso {
 	@GeneratedValue
 	private Integer id;
 	
-	@ManyToOne
+	@ManyToOne 
 	private Sessao sessao;
 	
 	private BigDecimal preco;
