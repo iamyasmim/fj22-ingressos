@@ -20,7 +20,7 @@ import br.com.caelum.ingresso.dao.FilmeDao;
 import br.com.caelum.ingresso.dao.SessaoDao;
 import br.com.caelum.ingresso.model.Filme;
 import br.com.caelum.ingresso.model.Sessao;
-import br.com.caelum.ingresso.model.form.DetalhesDoFilme;
+import br.com.caelum.ingresso.model.DetalhesDoFilme;
 import br.com.caelum.ingresso.rest.ImdbClient;
 
 /**
@@ -104,7 +104,7 @@ public class FilmeController {
     	
     	List<Sessao> sessoes = sessaoDao.buscaSessoesDoFilme(filme);
     	
-    	Optional<DetalhesDoFilme> detalhesDoFilme = client.request(filme);
+    	Optional<DetalhesDoFilme> detalhesDoFilme = client.request(filme, DetalhesDoFilme.class);
     	
     	modelAndView.addObject("sessoes", sessoes);
     	modelAndView.addObject("detalhes", detalhesDoFilme.orElse(new DetalhesDoFilme()));
