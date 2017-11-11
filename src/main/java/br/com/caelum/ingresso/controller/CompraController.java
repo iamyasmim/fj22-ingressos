@@ -16,6 +16,7 @@ import br.com.caelum.ingresso.model.Carrinho;
 import br.com.caelum.ingresso.model.Cartao;
 import br.com.caelum.ingresso.model.form.CarrinhoForm;
 
+
 public class CompraController {
 	
 	@Autowired
@@ -56,5 +57,6 @@ public class CompraController {
 			result.rejectValue("vencimento", "Vencimento invalido");
 			return checkout(cartao);
 		}
+	return modelAndView;
 	}
 }
